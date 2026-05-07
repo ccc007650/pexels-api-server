@@ -11,7 +11,7 @@ PEXELS_API_KEY = os.getenv("PEXELS_API_KEY")
 @app.route("/")
 def home():
     return '''
-    <h2>Pexels Image Search</h2>
+    <h2>Pexels Image Search TEST</h2>
 
     <form action="/search_page">
         <input type="text" name="query" placeholder="Search images..." />
