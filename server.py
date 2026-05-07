@@ -20,7 +20,7 @@ def home():
     '''
 
 
-# Browser page route (HTML images)
+# Browser page route
 @app.route("/search_page")
 def search_page():
 
@@ -61,7 +61,7 @@ def search_page():
     '''
 
 
-# API route for Agent Zero / scripts
+# API endpoint
 @app.route("/search_pexels", methods=["POST"])
 def search_pexels():
 
@@ -83,6 +83,12 @@ def search_pexels():
     res = requests.get(url, headers=headers, params=params)
 
     return jsonify(res.json())
+
+
+# TEMP DEBUG ROUTE
+@app.route("/test_key")
+def test_key():
+    return str(PEXELS_API_KEY)
 
 
 if __name__ == "__main__":
