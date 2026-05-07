@@ -83,7 +83,26 @@ def search_pexels():
     res = requests.get(url, headers=headers, params=params)
 
     return jsonify(res.json())
+@app.route("/search_videos", methods=["POST"])
+def search_videos():
 
+    data = request.get_json()
+    query = data.get("query", "")
+
+    url = "https://api.pexels.com/videos/search"
+
+    headers = {
+        "Authorization": PEXELS_API_KEY
+    }
+
+    params = {
+        "query": query,
+        "per_page": 5
+    }
+
+    res = requests.get(url, headers=headers, params=params)
+
+    return res.json()
 
 # TEMP DEBUG ROUTE
 
