@@ -86,9 +86,7 @@ def search_pexels():
 
 
 # TEMP DEBUG ROUTE
-@app.route("/test_key")
-def test_key():
-    return str(PEXELS_API_KEY)
+
 
 
 if __name__ == "__main__":
